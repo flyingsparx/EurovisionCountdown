@@ -1,0 +1,102 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".About" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:text="Eurovision Countdown"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <View
+        android:id="@+id/separator1"
+    	android:layout_width="match_parent"
+    	android:layout_below="@+id/textView1"
+    	android:layout_height="2dp"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginTop="20dp"
+    	android:layout_marginRight="10dp"
+    	android:layout_centerHorizontal="true"
+    	android:background="#aaa" />
+    
+    <TextView
+        android:id="@+id/authorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/separator1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:text="Author"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/authorText"
+        android:layout_below="@+id/authorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Will Webberley\n\@flyingSparx" />
+    
+    <ImageView
+        android:id="@+id/twitter"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/separator1"
+        android:src="@drawable/twitter"
+        android:onClick="openTwitter" />
+    
+    <View
+        android:id="@+id/separator2"
+    	android:layout_width="match_parent"
+    	android:layout_below="@+id/authorText"
+    	android:layout_height="2dp"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginTop="20dp"
+    	android:layout_marginRight="10dp"
+    	android:layout_centerHorizontal="true"
+    	android:background="#aaa" />
+    
+    <TextView
+        android:id="@+id/disclaimerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/separator2"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:text="Disclaimer"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    	
+    <TextView
+        android:id="@+id/disclaimerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/disclaimerTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="This app is not affiliated with Eurovision or the European Broadcasting Union and is purely for casual informational purposes only.\n\nImages and logos remain the property of the EBU." />
+
+    
+
+</RelativeLayout>
+</ScrollView>
