@@ -1,3 +1,6 @@
+*.cache
+*.dex
+*.apk
 *.png
 *.class
 *.jar
