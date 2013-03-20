@@ -32,8 +32,6 @@ public final class R {
         public static final int twitter=0x7f020007;
     }
     public static final class id {
-        public static final int TextView01=0x7f080012;
-        public static final int TextView02=0x7f080011;
         public static final int aboutMenu=0x7f080016;
         public static final int action_settings=0x7f080015;
         public static final int andLabel=0x7f08000d;
@@ -44,15 +42,17 @@ public final class R {
         public static final int disclaimerTitle=0x7f080006;
         public static final int finalText=0x7f080009;
         public static final int imageView1=0x7f080008;
+        public static final int infoDate=0x7f080012;
         public static final int infoImage=0x7f08000a;
+        public static final int infoVenue=0x7f080013;
         public static final int link=0x7f080014;
         public static final int remainingLabel=0x7f08000f;
         public static final int separator1=0x7f080001;
         public static final int separator2=0x7f080005;
         public static final int textView1=0x7f080000;
-        public static final int textView3=0x7f080013;
+        public static final int totalDays=0x7f080010;
         public static final int twitter=0x7f080004;
-        public static final int view1=0x7f080010;
+        public static final int view1=0x7f080011;
         public static final int view2=0x7f08000b;
         public static final int weeks=0x7f08000c;
     }

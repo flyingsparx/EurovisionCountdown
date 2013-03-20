@@ -59,8 +59,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/view2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Large Text"
+        android:layout_marginTop="10dp"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#222" />
 
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/weeks"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:text="and"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#aaa" />
@@ -81,8 +81,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/andLabel"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Large Text"
+        android:layout_marginTop="10dp"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#222" />
 
@@ -92,8 +92,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/days"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:text="remaining!"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#aaa" />
+    
+    <TextView
+        android:id="@+id/totalDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/remainingLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#aaa" />
 
@@ -101,70 +112,53 @@
         android:id="@+id/view1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/remainingLabel"
+        android:layout_below="@+id/totalDays"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="15dp"
         android:background="#aaa" />
-
+    
+    
+    <!-- ************************************************************************************ -->
+    
+    
     <TextView
-        android:id="@+id/TextView02"
+        android:id="@+id/infoDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView01"
-        android:layout_alignBottom="@+id/TextView01"
-        android:layout_alignLeft="@+id/textView3"
-        android:text="Malmö, Sweden"
+        android:layout_below="@+id/view1"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#222" />
-
-    <TextView
-        android:id="@+id/TextView01"
+    
+     <TextView
+        android:id="@+id/infoVenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="18dp"
-        android:text="Venue:"
+        android:layout_below="@+id/infoDate"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#aaa" />
-
+        android:textColor="#222" />
     
-
+    
     <TextView
         android:id="@+id/link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/TextView02"
-        android:layout_marginTop="21dp"
+        android:layout_below="@+id/infoVenue"
+        android:layout_marginTop="20dp"
         android:text="Visit eurovision.tv for more info"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:onClick="openLink"
         android:clickable="true"
         android:textColor="#222" />
-        
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_alignLeft="@+id/andLabel"
-        android:text="18th May 2013"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#222" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/view1"
-        android:layout_marginTop="16dp"
-        android:layout_toLeftOf="@+id/remainingLabel"
-        android:text="Final:"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#aaa" />
+    
 
     
 

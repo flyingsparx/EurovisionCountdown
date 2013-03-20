@@ -20,30 +20,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-@SuppressLint("NewApi") public class Main extends Activity {
+public class Main extends Activity {
 
 	private Date today, euro;
 	private TextView weeks, days;
 	
 	private final String finalDate = "18/05/2013";
 	
-    @SuppressLint("NewApi") @Override
+	private final String infoDate = "18th May 2013";
+	private final String infoVenue = "Malmö, Sweden";
+	
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-        /*
-         * Hide the action bar so the activity can take up the whole window
-         * (inside try-catch as this caused force-closes on some devices)
-         */
-        try{
-        	System.out.println("Trying to hide action bar...");
-        	ActionBar actionBar = getActionBar();
-        	actionBar.hide();
-        }
-        catch(Exception e){
-        	System.err.println(e);
-        }
         
        setDate();
         
@@ -70,12 +59,11 @@ import android.widget.TextView;
         DateTime dateTime2 = new DateTime(euro);
         
         int dayDiff = Days.daysBetween(dateTime1.toDateMidnight() , dateTime2.toDateMidnight() ).getDays();
-        int weekDiff =  Weeks.weeksBetween(dateTime1.toDateMidnight(), dateTime2.toDateMidnight()).getWeeks();
+        int weekInt =  Weeks.weeksBetween(dateTime1.toDateMidnight(), dateTime2.toDateMidnight()).getWeeks();
         
-        int weekInt = dayDiff / 7;
         int dayInt = dayDiff % 7;
         
-        updateUI(weekDiff, dayInt, dayDiff);        
+        updateUI(weekInt, dayInt, dayDiff);        
     }
     
     /*
@@ -84,9 +72,14 @@ import android.widget.TextView;
     private void updateUI(int weekInt, int dayInt, int dayDiff){
     	if(weekInt == 1){
         	weeks.setText(weekInt+" week");
+        	((TextView)findViewById(R.id.totalDays)).setVisibility(View.INVISIBLE);
         }
-        if(weekInt > 1 || weekInt == 0){
+        if(weekInt >1){
         	weeks.setText(weekInt+" weeks");
+        }
+        if(weekInt > 0){
+        	((TextView)findViewById(R.id.totalDays)).setVisibility(View.VISIBLE);
+        	((TextView)findViewById(R.id.totalDays)).setText("That's "+dayDiff+" days!");
         }
         if(dayInt == 1){
         	days.setText(dayInt+" day");
@@ -99,10 +92,14 @@ import android.widget.TextView;
         	weeks.setText(dayInt+" days");
         	((TextView)findViewById(R.id.days)).setVisibility(View.INVISIBLE);
         	((TextView)findViewById(R.id.andLabel)).setVisibility(View.INVISIBLE);
+        	((TextView)findViewById(R.id.totalDays)).setVisibility(View.INVISIBLE);
         }
         if(dayDiff < 0){
-        	weeks.setText("The 2013 final is over :(");
+        	weeks.setText("The 2013 final is over");
+        	((TextView)findViewById(R.id.totalDays)).setText("Please wait for the app update for information on the 2014 final");
+        	((TextView)findViewById(R.id.weeks)).setVisibility(View.VISIBLE);
         	((TextView)findViewById(R.id.days)).setVisibility(View.INVISIBLE);
+        	((TextView)findViewById(R.id.totalDays)).setVisibility(View.VISIBLE);
         	((TextView)findViewById(R.id.andLabel)).setVisibility(View.INVISIBLE);
         	((TextView)findViewById(R.id.remainingLabel)).setVisibility(View.INVISIBLE);
         }
@@ -112,7 +109,7 @@ import android.widget.TextView;
         	((TextView)findViewById(R.id.andLabel)).setVisibility(View.INVISIBLE);
         	((TextView)findViewById(R.id.remainingLabel)).setVisibility(View.INVISIBLE);
         }        
-        if(weekInt == 0 && dayInt == 0){
+        if(dayInt == 0 && weekInt == 0){
         	weeks.setText("The 2013 final is today!");
         	((TextView)findViewById(R.id.days)).setVisibility(View.INVISIBLE);
         	((TextView)findViewById(R.id.andLabel)).setVisibility(View.INVISIBLE);
@@ -120,6 +117,11 @@ import android.widget.TextView;
         }
         String styledText = "Visit <span style=\"color:blue\"><u>eurovision.tv</u></span> for more info";
         ((TextView)findViewById(R.id.link)).setText(Html.fromHtml(styledText), TextView.BufferType.SPANNABLE);
+        
+        String styledText2 = "<b>Date:</b> "+infoDate;
+        String styledText3 = "<b>Venue:</b> "+infoVenue;
+        ((TextView)findViewById(R.id.infoDate)).setText(Html.fromHtml(styledText2), TextView.BufferType.SPANNABLE);
+        ((TextView)findViewById(R.id.infoVenue)).setText(Html.fromHtml(styledText3), TextView.BufferType.SPANNABLE);
     }
     
     /*
